@@ -68,8 +68,6 @@ a:hover::before {
 
 a:active {
   color: var(--dark-grey);
-  text-decoration-color: var(--primary-color);
-  text-decoration-thickness: 3px;
 }
 
 button {

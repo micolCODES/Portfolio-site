@@ -62,9 +62,6 @@ a:hover::before {
 
 a:active {
   color: #444;
-  -webkit-text-decoration-color: #9fad9a;
-          text-decoration-color: #9fad9a;
-  text-decoration-thickness: 3px;
 }
 
 button {
