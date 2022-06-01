@@ -7,12 +7,20 @@ Darker primary color (Eucalitpus green): #465d42;
 Lighter primary color (Eucalitpus green): #eff5eb/#c0cebc;
 Secondary Color (Orange): #F08308;
  */
+:root {
+  --primary-color: #9fad9a;
+  --primary-color-darker: #465d42;
+  --primary-color-lighter: #c0cebc;
+  --secondary-color: #f08308;
+  --dark-grey: #444;
+  --white: #fff;
+}
 
 body {
   font-family: 'Mulish', sans-serif;
   font-weight: 200;
   font-size: 18px;
-  color: #444444;
+  color: var(--dark-grey);
   line-height: 1.3;
 }
 
@@ -33,88 +41,58 @@ h3 {
 
 a {
   text-decoration: none;
-  color: #444444;
+  color: var(--dark-grey);
   position: relative;
 }
 
 a:visited {
-  color: #444444;
+  color: var(--dark-grey);
 }
 
 a::before {
   content: '';
-  background-color: #c0cebc;
+  background-color: var(--primary-color-lighter);
   opacity: 80%;
   position: absolute;
   left: 0;
-  bottom: 0px;
   width: 100%;
   height: 3px;
+  bottom: 0;
   z-index: -1;
-  -webkit-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 a:hover::before {
-  bottom: 0;
   height: 100%;
 }
 
 a:active {
-  color: #444444;
+  color: var(--dark-grey);
 }
 
 button {
   border: none;
   font-family: inherit;
   font-weight: 400;
-  background-color: #9fad9a;
-  color: #FFFFFF !important;
+  background-color: var(--primary-color);
+  color: var(--white) !important;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
 }
 
-button:hover, button:focus {
-  cursor: pointer;
-  opacity: 0.8;
-}
-
-button {
-  border: none;
-  display: inline-block;
-  font-family: inherit;
-  font-weight: 400;
-  background-color: #9fad9a;
-  color: #FFFFFF !important;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 3px;
-  -webkit-transition-duration: 0.3s;
-       -o-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  -webkit-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-}
-
+button,
 .button {
   border: none;
   display: inline-block;
   font-family: inherit;
   font-weight: 400;
-  background-color: #9fad9a;
-  /* this overrides the <a> command so text will be white, not black*/
-  color: #FFFFFF !important;
+  background-color: var(--primary-color);
+  color: var(--white) !important;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-  -webkit-transition-duration: 0.3s;
-       -o-transition-duration: 0.3s;
-          transition-duration: 0.3s;
-  -webkit-transition-property: opacity;
-  -o-transition-property: opacity;
+  transition: all 60s ease-in-out;
   transition-property: opacity;
 }
 
@@ -127,19 +105,17 @@ button:focus,
 }
 
 a.button::before {
-  -webkit-transition-duration: 0.2s;
-       -o-transition-duration: 0.2s;
-          transition-duration: 0.2s;
-  -webkit-transition-property: opacity;
-  -o-transition-property: opacity;
+  transition-duration: 0.2s;
   transition-property: opacity;
 }
 
-.cursive{
-  font-family: "Grape Nuts";
+.cursive {
+  font-family: 'Grape Nuts', cursive !important;
+  font-size: 28px;
+  line-height: 2;
 }
 
-.profile-photo{
+.profile-photo {
   float: left;
   height: auto;
   width: 250px;
@@ -149,13 +125,8 @@ a.button::before {
 
 .page-footer {
   clear: both;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -165,22 +136,16 @@ a.button::before {
 }
 
 .page-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 20px;
 }
 
 .page-header__item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 200px;
-          flex: 0 1 200px;
+  flex: 0 1 200px;
 }
 
 .page-header__item:last-child {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  flex-grow: 1;
   text-align: right;
 }
 
@@ -194,8 +159,9 @@ a.button::before {
 }
 
 .grid {
-  display: -ms-grid;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .grid__item {
@@ -203,31 +169,19 @@ a.button::before {
   padding: 5px;
 }
 
-.grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
 .grid__item:last-child {
-  -ms-grid-column: 3;
   grid-column: 3 / 3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
   grid-row: 1 / 3;
 }
 
 @media all and (max-width: 500px) {
   .grid {
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
 
-@media all and (min-width: 500px) and (max-width: 750px){
+@media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
-    -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -236,75 +190,46 @@ a.button::before {
   .grid {
     grid-gap: 10px;
   }
+
   .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: 22px;
   }
 }
 
-@-webkit-keyframes sun-rise {
-  from{
-    -webkit-transform: rotate(-35deg);
-            transform: rotate(-35deg);
-  }
-  to{
-    -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
-  }
-
-}
-
 @keyframes sun-rise {
-  from{
-    -webkit-transform: rotate(-35deg);
-            transform: rotate(-35deg);
-  }
-  to{
-    -webkit-transform: rotate(225deg);
-            transform: rotate(225deg);
+  from {
+    transform: rotate(-35deg);
   }
 
+  to {
+    transform: rotate(225deg);
+  }
 }
 
 .sun {
-  -webkit-animation: sun-rise 15s infinite ease;
-          animation: sun-rise 15s infinite ease;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-  /*transform-box: fill-box;*/
-}
+  animation: sun-rise 15s infinite ease;
+  transform-origin: center;
 
-@-webkit-keyframes wheel-spin {
-  from{
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to{
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+  /* transform-box: fill-box; */
 }
 
 @keyframes wheel-spin {
-  from{
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+  from {
+    transform: rotate(0deg);
   }
-  to{
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+
+  to {
+    transform: rotate(360deg);
   }
 }
 
 .wheel {
-  -webkit-animation: wheel-spin 5s linear infinite;
-          animation: wheel-spin 5s linear infinite;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  animation: wheel-spin 5s linear infinite;
+  transform-origin: center;
   transform-box: fill-box;
 }
