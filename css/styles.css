@@ -57,18 +57,17 @@ a::before {
   left: 0;
   width: 100%;
   height: 3px;
+  bottom: 0;
   z-index: -1;
   transition: all 0.3s ease-in-out;
 }
 
 a:hover::before {
-  bottom: 0;
   height: 100%;
 }
 
 a:active {
   color: var(--dark-grey);
-  text-decoration: underline;
   text-decoration-color: var(--primary-color);
   text-decoration-thickness: 3px;
 }
@@ -78,18 +77,10 @@ button {
   font-family: inherit;
   font-weight: 400;
   background-color: var(--primary-color);
-
-  /* this overrides the <a> command so text will be white, not black */
   color: var(--white) !important;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-}
-
-button:hover,
-button:focus {
-  cursor: pointer;
-  opacity: 0.8;
 }
 
 button,
@@ -98,14 +89,12 @@ button,
   display: inline-block;
   font-family: inherit;
   font-weight: 400;
-  background-color: #9fad9a;
-
-  /* this overrides the <a> command so text will be white, not black */
+  background-color: var(--primary-color);
   color: var(--white) !important;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-  transition-duration: 0.3s;
+  transition: all 60s ease-in-out;
   transition-property: opacity;
 }
 
@@ -125,6 +114,7 @@ a.button::before {
 .cursive {
   font-family: 'Grape Nuts', cursive !important;
   font-size: 28px;
+  line-height: 2;
 }
 
 .profile-photo {
