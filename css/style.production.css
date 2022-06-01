@@ -1,11 +1,4 @@
 /*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.12,
-* Autoprefixer: v10.4.4
-* Browsers: last 4 version
-*/
-
-/*
 Colors used
 
 Text Color (Dark Gray): #444444;
@@ -15,15 +8,15 @@ Lighter primary color (Eucalitpus green): #eff5eb/#c0cebc;
 Secondary Color (Orange): #F08308;
  */
 
- body {
-   font-family: 'Mulish', sans-serif;
-   font-weight: 200;
-   font-size: 18px;
-   color: #444444;
-   line-height: 1.3;
- }
+body {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  color: #444;
+  line-height: 1.3;
+}
 
- h1 {
+h1 {
   font-size: 30px;
   font-weight: 600;
 }
@@ -40,12 +33,12 @@ h3 {
 
 a {
   text-decoration: none;
-  color: #444444;
+  color: #444;
   position: relative;
 }
 
 a:visited {
-  color: #444444;
+  color: #444;
 }
 
 a::before {
@@ -54,27 +47,21 @@ a::before {
   opacity: 80%;
   position: absolute;
   left: 0;
-  bottom: 0px;
   width: 100%;
   height: 3px;
+  bottom: 0;
   z-index: -1;
-  -webkit-transition: all .3s ease-in-out;
-  -o-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 a:hover::before {
-  bottom: 0;
   height: 100%;
 }
 
-
 a:active {
-  color: #444444;
-  text-decoration: underline;
-  -webkit-text-decoration-color: #9fad9a;
-          text-decoration-color: #9fad9a;
-  text-decoration-thickness: 3px;
+  color: #444;
 }
 
 button {
@@ -82,20 +69,10 @@ button {
   font-family: inherit;
   font-weight: 400;
   background-color: #9fad9a;
-  /* this overrides the <a> command so text will be white, not black*/
-  color: #FFFFFF !important;
+  color: #fff !important;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-}
-
-button:hover, button:focus {
-  cursor: pointer;
-  opacity: 0.8;
-  /* I think I need to add something here to change the transiton style of the button on the About me page*/
-  /* this doesnt work
-  transition-duration: 0s !important;
-  transition-delay: 0s !important;*/
 }
 
 button {
@@ -104,14 +81,13 @@ button {
   font-family: inherit;
   font-weight: 400;
   background-color: #9fad9a;
-  /* this overrides the <a> command so text will be white, not black*/
-  color: #FFFFFF !important;
+  color: #fff !important;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-  -webkit-transition-duration: 0.3s;
-       -o-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition: all 60s ease-in-out;
+  -o-transition: all 60s ease-in-out;
+  transition: all 60s ease-in-out;
   -webkit-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
@@ -123,14 +99,13 @@ button {
   font-family: inherit;
   font-weight: 400;
   background-color: #9fad9a;
-  /* this overrides the <a> command so text will be white, not black*/
-  color: #FFFFFF !important;
+  color: #fff !important;
   text-decoration: none;
   padding: 10px;
   border-radius: 3px;
-  -webkit-transition-duration: 0.3s;
-       -o-transition-duration: 0.3s;
-          transition-duration: 0.3s;
+  -webkit-transition: all 60s ease-in-out;
+  -o-transition: all 60s ease-in-out;
+  transition: all 60s ease-in-out;
   -webkit-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
@@ -153,7 +128,13 @@ a.button::before {
   transition-property: opacity;
 }
 
-.profile-photo{
+.cursive {
+  font-family: 'Grape Nuts', cursive !important;
+  font-size: 28px;
+  line-height: 2;
+}
+
+.profile-photo {
   float: left;
   height: auto;
   width: 250px;
@@ -163,15 +144,6 @@ a.button::before {
 
 .page-footer {
   clear: both;
-}
-
-.profile {
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-.page-footer{
-  clear: both;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,6 +152,11 @@ a.button::before {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .page-header {
@@ -214,6 +191,9 @@ a.button::before {
 .grid {
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .grid__item {
@@ -221,13 +201,6 @@ a.button::before {
   padding: 5px;
 }
 
-.grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
-}
 .grid__item:last-child {
   -ms-grid-column: 3;
   grid-column: 3 / 3;
@@ -243,7 +216,7 @@ a.button::before {
   }
 }
 
-@media all and (min-width: 500px) and (max-width: 750px){
+@media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr;
@@ -254,37 +227,39 @@ a.button::before {
   .grid {
     grid-gap: 10px;
   }
+
   .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: 22px;
   }
 }
 
 @-webkit-keyframes sun-rise {
-  from{
+  from {
     -webkit-transform: rotate(-35deg);
             transform: rotate(-35deg);
   }
-  to{
+
+  to {
     -webkit-transform: rotate(225deg);
             transform: rotate(225deg);
   }
-
 }
 
 @keyframes sun-rise {
-  from{
+  from {
     -webkit-transform: rotate(-35deg);
             transform: rotate(-35deg);
   }
-  to{
+
+  to {
     -webkit-transform: rotate(225deg);
             transform: rotate(225deg);
   }
-
 }
 
 .sun {
@@ -293,26 +268,27 @@ a.button::before {
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
-  /*transform-box: fill-box;*/
 }
 
 @-webkit-keyframes wheel-spin {
-  from{
+  from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  to{
+
+  to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
 }
 
 @keyframes wheel-spin {
-  from{
+  from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  to{
+
+  to {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
   }
