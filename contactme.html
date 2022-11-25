@@ -36,13 +36,49 @@
       </ul>
     </nav>
   </header>
-  
-  <footer class="mainBody border column">
-    <div class="flex-item"><h1>
+
+  <div class="mainBody border">
+    <h1>
       Chat me up!
-    </h1></div>
-    <div class="flex-item"><p>Find me on</p></div>
-    <div class="flex-item">
+    </h1>
+    <form action="/login-form-action" method="post" id="contact-form">
+    <label class="contact-label" for="name">Name</label>
+    <br>
+    <input class="no-outline" required type="text" id="name" name="user_name">
+    <br>
+    <br>
+    <label class="contact-label" for="company">Company</label>
+    <br>
+    <input class="no-outline" type="text" id="company" name="user_company">
+    <br>
+    <br>
+    <label class="contact-label" for="email">Email</label>
+    <br>
+    <input class="no-outline" required type="email" id="email" name="user_email">
+    <br>
+    <br>
+    <label class="contact-label" for="collaboration">What is this about?</label>
+    <br>
+    <input type="checkbox" id="collaboration" name="collaboration" value="collaboration">
+    <label for="collaboration">I have a fun collab I want to share</label><br>
+    <input type="checkbox" id="hire" name="hire" value="hire">
+    <label for="hire">I need to book a session</label><br>
+    <input type="checkbox" id="interview" name="interview" value="interview">
+    <label for="interview"> I have a position you might be interested in. Let's chat!</label>
+    <br>
+    <br>
+    <label class="contact-label" for="message">Type in your message</label>
+    <br>
+    <textarea class="no-outline" maxlength="300" required id="message" name="user_message">
+    </textarea>
+    <br>
+    <br>
+    <button type="submit">Send it in</button>
+  </form>
+  </div>
+  <footer class="page-footer">
+    <p>Find me on</p>
+    <div>
       <!-- Github logo -->
       <a href="https://github.com/micolCODES/publiclyME" target="_blank">
         <img src="img/github_icon.svg" alt="github">

@@ -4,7 +4,7 @@ Colors used
 Text Color (Dark Gray): #444444;
 Primary Color (Eucaliptus Green): #9fad9a;
 Darker primary color (Eucalitpus green): #465d42;
-Lighter primary color (Eucalitpus green): #eff5eb/#c0cebc;
+Lighter primary color (Eucalitpus green): #ecefeb/#c0cebc;
 Secondary Color (Orange): #F08308;
  */
 
@@ -66,17 +66,6 @@ a:active {
 
 button {
   border: none;
-  font-family: inherit;
-  font-weight: 400;
-  background-color: #9fad9a;
-  color: #fff !important;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 3px;
-}
-
-button {
-  border: none;
   display: inline-block;
   font-family: inherit;
   font-weight: 400;
@@ -128,10 +117,87 @@ a.button::before {
   transition-property: opacity;
 }
 
+textarea {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: solid;
+  border-color: #9fad9a;
+}
+
+[type="checkbox"] {
+  position: relative;
+  left: 15px;
+  top: -4px;
+  z-index: 0;
+  -webkit-appearance: none;
+}
+
+[type="checkbox"] + label {
+  position: absolute;
+}
+
+[type="checkbox"] + label::before {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  border: 2px solid #9fad9a;
+  background-color: #fff;
+  display: block;
+  content: "";
+  float: left;
+  margin-right: 5px;
+  z-index: 5;
+  position: relative;
+}
+
+[type="checkbox"]:checked+label::before {
+  box-shadow: inset 0px 0px 0px 3px #fff;
+  background-color: #9fad9a;
+}
+
+.no-outline:focus {
+  outline: none;
+}
+
 .cursive {
   font-family: 'Grape Nuts', cursive !important;
+}
+
+.big {
   font-size: 28px;
   line-height: 2;
+}
+
+.small {
+  font-size: 1.2em;
+}
+
+.mainBody{
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+.column {
+  -webkit-flex-direction: column; 
+  flex-direction: column; 
+  float: center;
+}
+
+.flex-item {
+  text-align: center;
+}
+
+.border{
+  background-color: #ecefeb;
 }
 
 .profile-photo {
@@ -194,20 +260,54 @@ a.button::before {
   -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
+  margin: 0 auto;
+  padding: 3%;
 }
 
 .grid__item {
-  background-color: #eff5eb;
-  padding: 5px;
+  background-color: rgba(236, 239, 235, .4);
+  padding: 10px;
+  font-size: 90%;
 }
 
-.grid__item:last-child {
-  -ms-grid-column: 3;
-  grid-column: 3 / 3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1 / 3;
+.grid__item img {
+  height: auto;
+  width: 100%;
 }
+
+.grid__item h2 {
+  background-image: linear-gradient(120deg, #c0cebc, #fff);
+  background-position: bottom;
+  background-size: 100% 30%;
+  background-repeat: no-repeat;
+}
+
+.tech {
+  background-color: #9fad9a;
+  color: #fff;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 80%;
+}
+
+.button-work {
+  background-color: #c0cebc;
+  justify-items: center;
+}
+
+.live {
+  color: red;
+  font-size: large;
+}
+
+.live2 {
+  background-color: red;
+  color: #fff;
+  border-radius: 15%;
+  font-weight: 600;
+  font-size: small;
+}
+
 
 @media all and (max-width: 500px) {
   .grid {
