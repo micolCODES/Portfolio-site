@@ -300,14 +300,6 @@ input {
   font-size: large;
 }
 
-.live2 {
-  background-color: red;
-  color: #fff;
-  border-radius: 15%;
-  font-weight: 600;
-  font-size: small;
-}
-
 
 @media all and (max-width: 500px) {
   .grid {
